@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,209 +8,95 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #1B2A41;
+      background-color: #0a0a0a;
       color: white;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: #1B2A41;
-    }
-    nav {
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      font-size: 1.1rem;
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .banner {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-    .logo {
-      width: 220px;
-      height: auto;
-      margin: 20px auto 10px;
-      display: block;
-    }
-    .divider {
-      width: 80%;
-      margin: 10px auto 30px;
-      border-bottom: 2px solid #00bcd4;
-    }
-    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
       padding: 40px 20px;
       text-align: center;
     }
-    h1 { font-size: 2.8rem; margin-bottom: 10px; }
-    h2 { font-size: 1.8rem; margin-bottom: 20px; }
+    .logo {
+      width: 160px;
+      height: auto;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-out;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideIn 1.5s ease-out;
+    }
     p.description {
       font-size: 1.2rem;
       color: #bbb;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-    .services section {
+      max-width: 600px;
       margin-bottom: 40px;
+      animation: fadeIn 2.5s ease-in;
+    }
+    .services {
+      max-width: 800px;
+      text-align: left;
+      animation: fadeIn 3s ease-in;
+    }
+    .services h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
     }
     .services ul {
+      list-style: none;
       padding-left: 0;
     }
     .services li {
       font-size: 1.1rem;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
     }
-    .iso {
-      background-color: #0f1c2c;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
-    .iso h2 {
+    .services li::before {
+      content: "\2022";
       color: #00bcd4;
+      position: absolute;
+      left: 0;
     }
-    .iso p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    form input, form textarea {
-      width: 100%;
-      max-width: 500px;
-      padding: 10px;
-      margin: 10px auto;
-      border-radius: 6px;
-      border: none;
-      font-family: 'Open Sans', sans-serif;
-    }
-    form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background-color: #00bcd4;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .contact a:hover {
-      background-color: #0193a4;
-    }
-    footer {
-      background-color: #0f1c2c;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
-    <div class="divider"></div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>  <video class="banner" autoplay muted loop>
-    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-    Tu navegador no soporta videos HTML5.
-  </video>  <div class="container" id="inicio">
-    <h1>LICICON</h1>
-    <p class="description">
-      Somos un grupo multidisciplinario que ofrece soluciones integrales en consultoría legal, tecnológica, administrativa y de ingeniería, comprometidos con la excelencia, seguridad y transparencia en cada uno de nuestros servicios.
-    </p>
-  </div>  <div class="container services" id="servicios">
-    <section>
-      <h2>Servicios Legales</h2>
-      <ul>
-        <li>Asesoría jurídica especializada</li>
-        <li>Licitaciones públicas</li>
-        <li>Representación legal</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Tecnología / IT</h2>
-      <ul>
-        <li>Soluciones en ciberseguridad</li>
-        <li>Automatización de procesos</li>
-        <li>Soporte técnico empresarial</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Ingeniería y Supervisión</h2>
-      <ul>
-        <li>Supervisión de obra pública y privada</li>
-        <li>Ingeniería estructural y civil</li>
-        <li>Gestión de proyectos</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Contabilidad y Administración</h2>
-      <ul>
-        <li>Contabilidad general</li>
-        <li>Gestión fiscal</li>
-        <li>Administración de nómina</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Diseño Gráfico y Web</h2>
-      <ul>
-        <li>Diseño de identidad corporativa</li>
-        <li>Desarrollo de sitios web</li>
-        <li>Material gráfico y promocional</li>
-      </ul>
-    </section>
-  </div>  <div class="container iso">
-    <h2>Normas ISO que implementamos</h2>
-    <p>
-      En LICICON trabajamos conforme a estándares internacionales de calidad, seguridad, medio ambiente y gestión del riesgo, basados en las normas ISO 9001, ISO 14001, ISO 45001, ISO 27001 e ISO 31000.
-    </p>
-  </div>  <div class="container gallery">
-    <img src="https://via.placeholder.com/400x250?text=Legal" alt="Legal">
-    <img src="https://via.placeholder.com/400x250?text=Tecnolog%C3%ADa" alt="Tecnología">
-    <img src="https://via.placeholder.com/400x250?text=Ingenier%C3%ADa" alt="Ingeniería">
-    <img src="https://via.placeholder.com/400x250?text=Dise%C3%B1o+Web" alt="Diseño Web">
-  </div>  <div class="container contact" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Escríbenos. Toda gran solución empieza con una conversación.</p>
-    <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
-    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
-    <form>
-      <input type="text" placeholder="Nombre" required><br>
-      <input type="email" placeholder="Correo" required><br>
-      <textarea placeholder="Mensaje" required></textarea><br>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>  <footer>
-    <p>&copy; 2025 LICICON Integral Consulting Group</p>
-    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
-  </footer>
+  <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
+  <h1>LICICON</h1>
+  <p class="description">
+    Somos un grupo multidisciplinario que ofrece soluciones integrales en consultoría legal, tecnológica, administrativa y de ingeniería, comprometidos con la excelencia, seguridad y transparencia en cada uno de nuestros servicios.
+  </p>
+
+  <div class="services">
+    <h2>Servicios que ofrecemos</h2>
+    <ul>
+      <li>Consultoría legal y en procesos de licitación pública</li>
+      <li>Departamento de IT y soluciones en ciberseguridad</li>
+      <li>Supervisión de obras y servicios de ingeniería</li>
+      <li>Diseño gráfico e identidad corporativa</li>
+      <li>Diseño y desarrollo web</li>
+      <li>Servicios contables y administrativos</li>
+    </ul>
+  </div>
 </body>
 </html>
