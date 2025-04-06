@@ -5,14 +5,8 @@
   <title>LICICON Integral Consulting Group</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Libre Franklin', sans-serif;
       background-color: #0D1A2D;
@@ -31,9 +25,7 @@
       animation: fadeInLogo 2s ease-in-out forwards;
     }
     @keyframes fadeInLogo {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
     nav {
       display: flex;
@@ -71,11 +63,79 @@
       margin-bottom: 20px;
       font-weight: bold;
     }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
     p.description {
       font-size: 1.4rem;
       max-width: 900px;
       margin: 0 auto;
       line-height: 1.8;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      text-align: left;
+      margin-top: 30px;
+    }
+    .services-grid h3 {
+      color: #00bcd4;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+    .services-grid ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.3rem;
+    }
+    .services-grid li {
+      margin-bottom: 8px;
+    }
+    .iso {
+      margin-top: 50px;
+      background-color: #0f1c2c;
+      padding: 30px 20px;
+    }
+    .iso p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.3rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin: 10px auto;
+      border-radius: 6px;
+      border: none;
+      font-family: 'Libre Franklin', sans-serif;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .contact a:hover {
+      background-color: #0193a4;
+    }
+    footer {
+      background-color: #0f1c2c;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -112,6 +172,82 @@
       Cuando los procesos se detienen, la presión crece o la información está en juego...<br><br>
       <strong>Tranquilo… LICICON lo resuelve.</strong>
     </p>
-  </div>
+  </div>  <div class="container" id="servicios">
+    <h2>Servicios que ofrecemos</h2>
+    <div class="services-grid">
+      <div>
+        <h3>Legales</h3>
+        <ul>
+          <li>Asesoría jurídica especializada</li>
+          <li>Licitaciones públicas</li>
+          <li>Representación legal</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tecnología / IT</h3>
+        <ul>
+          <li>Soluciones en ciberseguridad</li>
+          <li>Automatización de procesos</li>
+          <li>Soporte técnico empresarial</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ingeniería y Supervisión</h3>
+        <ul>
+          <li>Supervisión de obra pública y privada</li>
+          <li>Ingeniería estructural y civil</li>
+          <li>Gestión de proyectos</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contabilidad, Administración y Cumplimiento STPS</h3>
+        <ul>
+          <li>Contabilidad general</li>
+          <li>Gestión administrativa y documental</li>
+          <li>Elaboración y validación de expedientes laborales</li>
+          <li>Implementación de políticas internas alineadas a normas de la STPS</li>
+          <li>Apoyo en auditorías internas de cumplimiento</li>
+          <li>Asesoría en obligaciones patronales ante la STPS</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Auditorías y Sistemas de Gestión ISO</h3>
+        <ul>
+          <li>Auditorías internas ISO 9001, 14001, 45001, 27001 y 31000</li>
+          <li>Implementación de sistemas de gestión integrados</li>
+          <li>Capacitación en normativas internacionales</li>
+          <li>Consultoría y alineación documental</li>
+          <li>Soporte para certificación ISO</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Diseño Gráfico y Web</h3>
+        <ul>
+          <li>Diseño de identidad corporativa</li>
+          <li>Desarrollo de sitios web</li>
+          <li>Material gráfico y promocional</li>
+        </ul>
+      </div>
+    </div>
+    <div class="iso">
+      <p>
+        En LICICON trabajamos conforme a estándares internacionales de calidad, seguridad, medio ambiente y gestión del riesgo, basados en las normas ISO 9001, ISO 14001, ISO 45001, ISO 27001 e ISO 31000.
+      </p>
+    </div>
+  </div>  <div class="container contact" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Escríbenos. Toda gran solución empieza con una conversación.</p>
+    <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
+    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
+    <form>
+      <input type="text" placeholder="Nombre" required><br>
+      <input type="email" placeholder="Correo" required><br>
+      <textarea placeholder="Mensaje" required></textarea><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>  <footer>
+    <p>&copy; 2025 LICICON Integral Consulting Group</p>
+    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
+  </footer>
 </body>
 </html>
