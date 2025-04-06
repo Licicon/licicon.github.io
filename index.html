@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LICICON Integral Consulting Group</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Libre Franklin', sans-serif;
       background-color: #0D1A2D;
       color: white;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
     }
     header {
       text-align: center;
@@ -23,6 +27,13 @@
       height: auto;
       display: block;
       margin: 0 auto 20px;
+      opacity: 0;
+      animation: fadeInLogo 2s ease-in-out forwards;
+    }
+    @keyframes fadeInLogo {
+      to {
+        opacity: 1;
+      }
     }
     nav {
       display: flex;
@@ -58,6 +69,7 @@
     h1 {
       font-size: 3.2rem;
       margin-bottom: 20px;
+      font-weight: bold;
     }
     p.description {
       font-size: 1.4rem;
@@ -75,18 +87,14 @@
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
     </nav>
-  </header>
-
-  <div class="carousel">
+  </header>  <div class="carousel">
     <img src="carousel/slide1.jpg" class="active" />
     <img src="carousel/slide2.jpg" />
     <img src="carousel/slide3.jpg" />
     <img src="carousel/slide4.jpg" />
     <img src="carousel/slide5.jpg" />
     <img src="carousel/slide6.jpg" />
-  </div>
-
-  <script>
+  </div>  <script>
     const images = document.querySelectorAll('.carousel img');
     let current = 0;
     setInterval(() => {
@@ -94,12 +102,9 @@
       current = (current + 1) % images.length;
       images[current].classList.add('active');
     }, 5000);
-  </script>
-
-  <div class="container" id="inicio">
-    <h1>LICICON Integral Consulting Group</h1>
+  </script>  <div class="container" id="inicio">
+    <h1><strong>LICICON Integral Consulting Group</strong></h1>
     <p class="description">
-      <strong>LICICON Integral Consulting Group</strong><br><br>
       Consultoría especializada en materia legal, fiscal, administrativa, tecnológica, de ingeniería y seguridad de la información.<br><br>
       Somos un grupo multidisciplinario que integra experiencia jurídica, contable, operativa, tecnológica e ingeniería, enfocados en brindar soluciones estratégicas a empresas, dependencias públicas y profesionistas.<br><br>
       Actuamos con visión integral, discreción ejecutiva y orientación a resultados.<br><br>
