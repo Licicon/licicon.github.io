@@ -1,76 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LICICON Integral Consulting Group</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      background-color: #0f172a;
-      color: #f1f5f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem;
-    }
-    header {
+      background-color: #0a0a0a;
+      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100vh;
       text-align: center;
     }
-    img.logo {
-      width: 260px;
-      margin-bottom: 1rem;
+    .logo {
+      width: 160px;
+      height: auto;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-out;
     }
     h1 {
-      font-size: 2rem;
-      margin: 0;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideIn 1.5s ease-out;
     }
     p {
-      max-width: 600px;
-      text-align: center;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      color: #bbb;
+      animation: fadeIn 2.5s ease-in;
     }
-    section {
-      margin-top: 2rem;
-      max-width: 800px;
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
     }
-    h2 {
-      color: #38bdf8;
-    }
-    footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo_licicon_vectorial.png" alt="LICICON Logo" class="logo">
-    <h1>LICICON Integral Consulting Group</h1>
-    <p>Consultoría legal, fiscal, administrativa y tecnológica. Tranquilo... LICICON lo resuelve.</p>
-  </header>
-
-  <section>
-    <h2>Servicios Fiscales Personalizados</h2>
-    <p>
-      Declaraciones anuales, monitoreo fiscal, gestión de CFDI, proyección de ISR y acompañamiento total ante el SAT. Servicios diseñados para personas físicas, profesionistas independientes y emprendedores.
-    </p>
-
-    <h2>Consultoría Integral</h2>
-    <p>
-      Contamos con experiencia multidisciplinaria en gestión pública, normativa, tecnológica y administrativa. Acompañamos a empresas y organismos a tomar decisiones informadas y estratégicas.
-    </p>
-  </section>
-
-  <footer>
-    © 2025 LICICON Integral Consulting Group · contactolicicon@gmail.com
-  </footer>
+  <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
+  <h1>LICICON</h1>
+  <p>Integral Consulting Group</p>
 </body>
 </html>
