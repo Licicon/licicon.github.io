@@ -141,6 +141,66 @@
       padding: 20px;
       font-size: 0.9rem;
     }
+
+    /* Medias Queries para hacer el sitio responsivo */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 5%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .services-grid h3 {
+        font-size: 1.4rem;
+      }
+
+      .contact a {
+        padding: 10px 15px;
+      }
+
+      .carousel img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 3%;
+      }
+
+      .services-grid h3 {
+        font-size: 1.2rem;
+      }
+
+      .contact a {
+        padding: 8px 12px;
+      }
+
+      .carousel img {
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -253,4 +313,16 @@
     <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
     <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
     <form>
-      <input type="text" placeholder="Nombre" required><
+      <input type="text" placeholder="Nombre" required><br>
+      <input type="email" placeholder="Correo" required><br>
+      <textarea placeholder="Mensaje" required></textarea><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 LICICON Integral Consulting Group</p>
+    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
+  </footer>
+</body>
+</html>
