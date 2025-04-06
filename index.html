@@ -13,14 +13,19 @@
       color: white;
     }
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #0D1A2D;
       text-align: center;
-      padding: 20px;
+      padding: 20px 0 10px;
     }
     .logo {
-      width: 600px;
+      width: 1000px;
+      max-width: 90%;
       height: auto;
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 10px;
       opacity: 0;
       animation: fadeInLogo 2s ease-in-out forwards;
     }
@@ -75,7 +80,7 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       text-align: left;
       margin-top: 30px;
@@ -147,107 +152,4 @@
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
     </nav>
-  </header>  <div class="carousel">
-    <img src="carousel/slide1.jpg" class="active" />
-    <img src="carousel/slide2.jpg" />
-    <img src="carousel/slide3.jpg" />
-    <img src="carousel/slide4.jpg" />
-    <img src="carousel/slide5.jpg" />
-    <img src="carousel/slide6.jpg" />
-  </div>  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 5000);
-  </script>  <div class="container" id="inicio">
-    <h1><strong>LICICON Integral Consulting Group</strong></h1>
-    <p class="description">
-      Consultoría especializada en materia legal, fiscal, administrativa, tecnológica, de ingeniería y seguridad de la información.<br><br>
-      Somos un grupo multidisciplinario que integra experiencia jurídica, contable, operativa, tecnológica e ingeniería, enfocados en brindar soluciones estratégicas a empresas, dependencias públicas y profesionistas.<br><br>
-      Actuamos con visión integral, discreción ejecutiva y orientación a resultados.<br><br>
-      Cuando surgen imprevistos legales, incertidumbre fiscal, riesgos operativos o amenazas digitales...<br>
-      Cuando los procesos se detienen, la presión crece o la información está en juego...<br><br>
-      <strong>Tranquilo… LICICON lo resuelve.</strong>
-    </p>
-  </div>  <div class="container" id="servicios">
-    <h2>Servicios que ofrecemos</h2>
-    <div class="services-grid">
-      <div>
-        <h3>Legales</h3>
-        <ul>
-          <li>Asesoría jurídica especializada</li>
-          <li>Licitaciones públicas</li>
-          <li>Representación legal</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Tecnología / IT</h3>
-        <ul>
-          <li>Soluciones en ciberseguridad</li>
-          <li>Automatización de procesos</li>
-          <li>Soporte técnico empresarial</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Ingeniería y Supervisión</h3>
-        <ul>
-          <li>Supervisión de obra pública y privada</li>
-          <li>Ingeniería estructural y civil</li>
-          <li>Gestión de proyectos</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contabilidad, Administración y Cumplimiento STPS</h3>
-        <ul>
-          <li>Contabilidad general</li>
-          <li>Gestión administrativa y documental</li>
-          <li>Elaboración y validación de expedientes laborales</li>
-          <li>Implementación de políticas internas alineadas a normas de la STPS</li>
-          <li>Apoyo en auditorías internas de cumplimiento</li>
-          <li>Asesoría en obligaciones patronales ante la STPS</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Auditorías y Sistemas de Gestión ISO</h3>
-        <ul>
-          <li>Auditorías internas ISO 9001, 14001, 45001, 27001 y 31000</li>
-          <li>Implementación de sistemas de gestión integrados</li>
-          <li>Capacitación en normativas internacionales</li>
-          <li>Consultoría y alineación documental</li>
-          <li>Soporte para certificación ISO</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Diseño Gráfico y Web</h3>
-        <ul>
-          <li>Diseño de identidad corporativa</li>
-          <li>Desarrollo de sitios web</li>
-          <li>Material gráfico y promocional</li>
-        </ul>
-      </div>
-    </div>
-    <div class="iso">
-      <p>
-        En LICICON trabajamos conforme a estándares internacionales de calidad, seguridad, medio ambiente y gestión del riesgo, basados en las normas ISO 9001, ISO 14001, ISO 45001, ISO 27001 e ISO 31000.
-      </p>
-    </div>
-  </div>  <div class="container contact" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Escríbenos. Toda gran solución empieza con una conversación.</p>
-    <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
-    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
-    <form>
-      <input type="text" placeholder="Nombre" required><br>
-      <input type="email" placeholder="Correo" required><br>
-      <textarea placeholder="Mensaje" required></textarea><br>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>  <footer>
-    <p>&copy; 2025 LICICON Integral Consulting Group</p>
-    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
-  </footer>
-</body>
-</html>
+  </header>
