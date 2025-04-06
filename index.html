@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,51 +15,13 @@
     }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #1B2A41;
+      background-color: #0a0a0a;
       color: white;
-      padding: 0;
-      margin: 0;
-    }
-    header {
-      background-color: #1B2A41;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-    nav .dropdown {
-      position: relative;
-    }
-    nav .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #1B2A41;
-      padding: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    nav .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    nav .dropdown-content a {
-      display: block;
-      margin: 5px 0;
-    }
-    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
       padding: 40px 20px;
       text-align: center;
     }
@@ -77,70 +40,40 @@
       font-size: 1.2rem;
       color: #bbb;
       max-width: 600px;
-      margin: 0 auto 40px;
+      margin-bottom: 40px;
       animation: fadeIn 2.5s ease-in;
     }
-    section {
-      margin-bottom: 40px;
+    .services {
+      max-width: 800px;
+      text-align: left;
+      animation: fadeIn 3s ease-in;
     }
-    h2 {
+    .services h2 {
       font-size: 1.8rem;
       margin-bottom: 20px;
+      text-align: center;
     }
-    ul {
+    .services ul {
       list-style: none;
       padding-left: 0;
     }
-    li {
+    .services li {
       font-size: 1.1rem;
       margin-bottom: 10px;
       position: relative;
       padding-left: 20px;
     }
-    li::before {
+    .services li::before {
       content: "\2022";
       color: #00bcd4;
       position: absolute;
       left: 0;
     }
-    form input, form textarea {
-      width: 100%;
-      max-width: 500px;
-      padding: 10px;
-      margin: 10px auto;
-      border-radius: 6px;
-      border: none;
-      font-family: 'Open Sans', sans-serif;
-    }
-    form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background-color: #00bcd4;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .contact a:hover {
-      background-color: #0193a4;
-    }
-    footer {
-      background-color: #0f1c2c;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
     @keyframes fadeIn {
       0% { opacity: 0; transform: scale(0.95); }
       100% { opacity: 1; transform: scale(1); }
     }
+
     @keyframes slideIn {
       0% { opacity: 0; transform: translateY(-30px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -148,85 +81,22 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <div class="dropdown">
-        <a href="#servicios">Servicios</a>
-        <div class="dropdown-content">
-          <a href="#servicios-legales">Legales</a>
-          <a href="#servicios-it">Tecnología / IT</a>
-          <a href="#servicios-ingenieria">Ingeniería</a>
-          <a href="#servicios-contables">Contables</a>
-          <a href="#servicios-diseno">Diseño</a>
-        </div>
-      </div>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>  <div class="container" id="inicio">
-    <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
-    <h1>LICICON</h1>
-    <p class="description">
-      Somos un grupo multidisciplinario que ofrece soluciones integrales en consultoría legal, tecnológica, administrativa y de ingeniería, comprometidos con la excelencia, seguridad y transparencia en cada uno de nuestros servicios.
-    </p>
-  </div>  <div class="container" id="servicios">
-    <section id="servicios-legales">
-      <h2>Servicios Legales</h2>
-      <ul>
-        <li>Asesoría jurídica especializada</li>
-        <li>Licitaciones públicas</li>
-        <li>Representación legal</li>
-      </ul>
-    </section><section id="servicios-it">
-  <h2>Servicios de Tecnología / IT</h2>
-  <ul>
-    <li>Soluciones en ciberseguridad</li>
-    <li>Automatización de procesos</li>
-    <li>Soporte técnico empresarial</li>
-  </ul>
-</section>
+  <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
+  <h1>LICICON</h1>
+  <p class="description">
+    Somos un grupo multidisciplinario que ofrece soluciones integrales en consultoría legal, tecnológica, administrativa y de ingeniería, comprometidos con la excelencia, seguridad y transparencia en cada uno de nuestros servicios.
+  </p>
 
-<section id="servicios-ingenieria">
-  <h2>Supervisión e Ingeniería</h2>
-  <ul>
-    <li>Supervisión de obra pública y privada</li>
-    <li>Ingeniería estructural y civil</li>
-    <li>Gestión de proyectos</li>
-  </ul>
-</section>
-
-<section id="servicios-contables">
-  <h2>Servicios Contables y Administrativos</h2>
-  <ul>
-    <li>Contabilidad general</li>
-    <li>Gestión fiscal</li>
-    <li>Administración de nómina</li>
-  </ul>
-</section>
-
-<section id="servicios-diseno">
-  <h2>Diseño Gráfico y Web</h2>
-  <ul>
-    <li>Diseño de identidad corporativa</li>
-    <li>Desarrollo de sitios web</li>
-    <li>Material gráfico y promocional</li>
-  </ul>
-</section>
-
-  </div>  <div class="container contact" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Escríbenos. Toda gran solución empieza con una conversación.</p>
-    <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
-    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a><form>
-  <input type="text" placeholder="Nombre" required><br>
-  <input type="email" placeholder="Correo" required><br>
-  <textarea placeholder="Mensaje" required></textarea><br>
-  <button type="submit">Enviar</button>
-</form>
-
-  </div>  <footer>
-    <p>&copy; 2025 LICICON Integral Consulting Group</p>
-    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
-  </footer>
+  <div class="services">
+    <h2>Servicios que ofrecemos</h2>
+    <ul>
+      <li>Consultoría legal y en procesos de licitación pública</li>
+      <li>Departamento de IT y soluciones en ciberseguridad</li>
+      <li>Supervisión de obras y servicios de ingeniería</li>
+      <li>Diseño gráfico e identidad corporativa</li>
+      <li>Diseño y desarrollo web</li>
+      <li>Servicios contables y administrativos</li>
+    </ul>
+  </div>
 </body>
 </html>
