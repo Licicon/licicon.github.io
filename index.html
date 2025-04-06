@@ -20,8 +20,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
       text-align: center;
     }
     .logo {
@@ -35,12 +36,39 @@
       margin-bottom: 10px;
       animation: slideIn 1.5s ease-out;
     }
-    p {
+    p.description {
       font-size: 1.2rem;
       color: #bbb;
+      max-width: 600px;
+      margin-bottom: 40px;
       animation: fadeIn 2.5s ease-in;
     }
-
+    .services {
+      max-width: 800px;
+      text-align: left;
+      animation: fadeIn 3s ease-in;
+    }
+    .services h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .services ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .services li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .services li::before {
+      content: "\2022";
+      color: #00bcd4;
+      position: absolute;
+      left: 0;
+    }
     @keyframes fadeIn {
       0% { opacity: 0; transform: scale(0.95); }
       100% { opacity: 1; transform: scale(1); }
@@ -55,6 +83,20 @@
 <body>
   <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo">
   <h1>LICICON</h1>
-  <p>Integral Consulting Group</p>
+  <p class="description">
+    Somos un grupo multidisciplinario que ofrece soluciones integrales en consultoría legal, tecnológica, administrativa y de ingeniería, comprometidos con la excelencia, seguridad y transparencia en cada uno de nuestros servicios.
+  </p>
+
+  <div class="services">
+    <h2>Servicios que ofrecemos</h2>
+    <ul>
+      <li>Consultoría legal y en procesos de licitación pública</li>
+      <li>Departamento de IT y soluciones en ciberseguridad</li>
+      <li>Supervisión de obras y servicios de ingeniería</li>
+      <li>Diseño gráfico e identidad corporativa</li>
+      <li>Diseño y desarrollo web</li>
+      <li>Servicios contables y administrativos</li>
+    </ul>
+  </div>
 </body>
 </html>
