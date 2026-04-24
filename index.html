@@ -1,328 +1,694 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LICICON Integral Consulting Group</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Libre Franklin', sans-serif;
-      background-color: #0D1A2D;
-      color: white;
-    }
-    header {
-      text-align: center;
-      padding: 20px 0 10px;
-    }
-    .logo {
-      width: 1000px;
-      max-width: 90%;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-      opacity: 0;
-      animation: fadeInLogo 2s ease-in-out forwards;
-    }
-    @keyframes fadeInLogo {
-      to { opacity: 1; }
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-    }
-    nav a {
-      font-size: 2.6rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .carousel {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-    }
-    .carousel img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
-    .carousel img.active {
-      opacity: 1;
-    }
-    .container {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    p.description {
-      font-size: 1.4rem;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      text-align: center;
-      margin-top: 30px;
-      justify-items: center;
-      padding: 0 10%;
-    }
-    .services-grid h3 {
-      color: #00bcd4;
-      margin-bottom: 10px;
-      font-size: 1.6rem;
-    }
-    .services-grid ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 1.3rem;
-    }
-    .services-grid li {
-      margin-bottom: 8px;
-    }
-    .iso {
-      margin-top: 50px;
-      background-color: #0f1c2c;
-      padding: 30px 20px;
-    }
-    .iso p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.3rem;
-    }
-    form input, form textarea {
-      width: 100%;
-      max-width: 500px;
-      padding: 10px;
-      margin: 10px auto;
-      border-radius: 6px;
-      border: none;
-      font-family: 'Libre Franklin', sans-serif;
-    }
-    form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background-color: #00bcd4;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .contact a:hover {
-      background-color: #0193a4;
-    }
-    footer {
-      background-color: #0f1c2c;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LICICON | Smart Asset Management & Compliance</title>
+    <meta name="description" content="LICICON — Firma especializada en Smart Asset Management, Compliance normativo y control institucional. Plataformas Catturare, Certezza y Conformità. CDMX y Toluca.">
+    <meta name="keywords" content="compliance México, gestión de activos, control de obra, inmobiliaria IA, cumplimiento normativo, ISO 27001, ISO 37301, LICICON">
+    <meta property="og:title" content="LICICON | Smart Asset Management & Compliance">
+    <meta property="og:description" content="Arquitectura de Cumplimiento Institucional. Plataformas tecnológicas para inmobiliarias, constructoras y empresas en México.">
+    <meta property="og:url" content="https://www.licicon.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
-    /* Medias Queries para hacer el sitio responsivo */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 20px;
-      }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { gold: "#D4AF37" } } } }</script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-        padding: 0 5%;
-      }
+    <style>
+        :root{ 
+            --brand-blue:#0f172a; 
+            --accent-gold:#D4AF37;
+            --light-gold:#F1E5AC;
+            --deep-slate:#05070a; 
+            --divider:rgba(212, 175, 55, 0.25); 
+        }
 
-      h1 {
-        font-size: 2.5rem;
-      }
+        /* ===== FIX MOVIL ===== */
+        html, body{
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        *, *::before, *::after{ box-sizing: border-box; }
 
-      h2 {
-        font-size: 1.8rem;
-      }
+        body{ font-family:'Montserrat',sans-serif; background:var(--deep-slate); color:#fff; }
+        .serif-title{font-family:'Cinzel',serif;}
+        
+        /* PRELOADER */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--deep-slate); z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 1; transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .loader-logo { 
+            width: min(450px, 80%); margin-bottom: 30px; 
+            opacity: 0; animation: fadeInLogo 2s forwards ease-in-out, pulseLogo 3s infinite 2s ease-in-out; 
+        }
+        @keyframes fadeInLogo { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulseLogo { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.02); opacity: 1; } }
+        
+        .loader-bar { width: 250px; height: 1px; background: rgba(212, 175, 55, 0.1); position: relative; overflow: hidden; opacity: 0; animation: fadeInLogo 2s forwards 0.5s ease-in-out; }
+        .loader-progress { position: absolute; height: 100%; width: 0; background: var(--accent-gold); animation: load 3s forwards 1s ease-in-out; }
+        @keyframes load { to { width: 100%; } }
 
-      .services-grid h3 {
-        font-size: 1.4rem;
-      }
+        /* NAV */
+        nav { background: rgba(5, 7, 10, 0.97); backdrop-filter: blur(15px); border-bottom: 1px solid var(--divider); height: 80px; transition: 0.3s; }
+        @media (min-width: 1024px) { nav { height: 100px; } }
 
-      .contact a {
-        padding: 10px 15px;
-      }
+        .nav-link { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: inline-block; }
+        .nav-link:hover { transform: translateY(-4px); color: var(--accent-gold) !important; filter: drop-shadow(0 0 5px rgba(214, 175, 55, 0.4)); }
 
-      .carousel img {
-        height: 200px;
-      }
-    }
+        .btn-luxe {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 10px 20px;
+            font-size: 9px;
+            letter-spacing: 0.3em;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+            background: transparent;
+        }
+        .btn-luxe:hover { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
+        .gold-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--divider), transparent); }
 
-      h2 {
-        font-size: 1.6rem;
-      }
+        /* CARDS */
+        .blue-gold-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+            position: relative;
+        }
+        .blue-gold-card:hover { transform: translateY(-12px); border-color: var(--accent-gold); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); }
+        
+        .card-indicator {
+            font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-gold);
+            margin-top: 15px; opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+        }
+        .blue-gold-card:hover .card-indicator { opacity: 1; transform: translateY(0); }
 
-      .services-grid {
-        grid-template-columns: 1fr;
-        padding: 0 3%;
-      }
+        .plus-icon { position: absolute; top: 15px; right: 15px; font-size: 12px; color: var(--accent-gold); opacity: 0.3; transition: 0.4s; }
+        .blue-gold-card:hover .plus-icon { opacity: 1; transform: rotate(90deg); }
 
-      .services-grid h3 {
-        font-size: 1.2rem;
-      }
+        /* METODOLOGÍA */
+        .step-node { transition: 0.5s ease; }
+        .step-item:hover .step-node { background: var(--accent-gold); box-shadow: 0 0 15px var(--accent-gold); }
 
-      .contact a {
-        padding: 8px 12px;
-      }
+        .asset-photo {
+            filter: grayscale(100%) brightness(50%);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 1.2s ease-in-out; width: 100%; height: 400px; object-fit: cover;
+        }
+        @media (min-width: 1024px) { .asset-photo { height: 500px; } }
+        .asset-photo:hover { filter: grayscale(0%) brightness(90%); border-color: var(--accent-gold); }
 
-      .carousel img {
-        height: 150px;
-      }
-    }
-  </style>
+        /* LIBRO BOSS */
+        .book-container { perspective: 1000px; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .book-wrapper {
+            width: min(320px, 80vw); height: 450px; position: relative;
+            transform-style: preserve-3d; transform: rotateY(-20deg) rotateX(10deg);
+            transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .book-container:hover .book-wrapper { transform: rotateY(0deg) rotateX(0deg) scale(1.05); }
+        .book-cover {
+            width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #05070a 100%);
+            border: 1px solid var(--accent-gold); box-shadow: -15px 15px 40px rgba(0,0,0,0.8);
+            display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; position: relative; z-index: 2;
+        }
+        .book-spine { position: absolute; left: 0; top: 0; width: 40px; height: 100%; background: #05070a; transform: rotateY(-90deg) translateX(-20px); border: 1px solid var(--accent-gold); z-index: 1; }
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, var(--accent-gold), var(--light-gold), var(--accent-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0; 
+            width: 100%; height: 100%; background-color: rgba(5, 7, 10, 0.98);
+            backdrop-filter: blur(15px); overflow-y: auto;
+        }
+        .modal-content {
+            background: var(--deep-slate); margin: 5% auto; padding: 40px 20px; 
+            border: 1px solid var(--divider); width: 90%; max-width: 550px; position: relative;
+        }
+
+        /* MENU MOBILE OVERLAY */
+        #mobile-menu { transform: translateY(-100%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        #mobile-menu.open { transform: translateY(0); }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo_licicon_letras_blancas.png" alt="LICICON Logo" class="logo" />
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
 
-  <div class="carousel">
-    <img src="carousel/slide1.jpg" class="active" />
-    <img src="carousel/slide2.jpg" />
-    <img src="carousel/slide3.jpg" />
-    <img src="carousel/slide4.jpg" />
-    <img src="carousel/slide5.jpg" />
-    <img src="carousel/slide6.jpg" />
-  </div>
+<div id="preloader">
+    <img src="logo.png" alt="LICICON Logo" class="loader-logo">
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+</div>
 
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 5000);
-  </script>
+<nav class="fixed w-full z-50 px-6 md:px-20 py-2 flex justify-between items-center">
+    <a href="#"><img src="logo.png" alt="LICICON" class="h-[50px] md:h-[85px]"></a>
+    
+    <div class="hidden lg:flex space-x-12 text-[10px] uppercase font-bold tracking-[0.3em] text-slate-500 items-center">
+        <a href="#que-hacemos" class="nav-link">Qué Hacemos</a>
+        <a href="#especializacion" class="nav-link">Especialización</a>
+        <a href="#sectores" class="nav-link">Sectores</a>
+        <a href="#metodologia" class="nav-link">Metodología</a>
+        <a href="#plataformas" class="nav-link">Plataformas</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="https://conformita.licicon.com" target="_blank" class="btn-luxe ml-4">Diagnóstico Gratuito</a>
+    </div>
 
-  <div class="container" id="inicio">
-    <h1><strong>LICICON Integral Consulting Group</strong></h1>
-    <p class="description">
-      Consultoría especializada en materia legal, fiscal, administrativa, tecnológica, de ingeniería y seguridad de la información.<br><br>
-      Somos un grupo multidisciplinario que integra experiencia jurídica, contable, operativa, tecnológica e ingeniería, enfocados en brindar soluciones estratégicas a empresas, dependencias públicas y profesionistas.<br><br>
-      Actuamos con visión integral, discreción ejecutiva y orientación a resultados.<br><br>
-      Cuando surgen imprevistos legales, incertidumbre fiscal, riesgos operativos o amenazas digitales...<br>
-      Cuando los procesos se detienen, la presión crece o la información está en juego...<br><br>
-      <strong>Tranquilo… LICICON lo resuelve.</strong>
+    <button class="lg:hidden text-gold text-2xl" onclick="toggleMenu(true)"><i class="fas fa-bars"></i></button>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 bg-black z-[100] flex flex-col justify-center items-center space-y-8">
+    <button class="absolute top-8 right-8 text-gold text-3xl" onclick="toggleMenu(false)">&times;</button>
+    <a href="#que-hacemos" class="serif-title text-xl text-white" onclick="toggleMenu(false)">Qué Hacemos</a>
+    <a href="#especializacion" class="serif-title text-xl text-white" onclick="toggleMenu(false)">Especialización</a>
+    <a href="#sectores" class="serif-title text-xl text-white" onclick="toggleMenu(false)">Sectores</a>
+    <a href="#metodologia" class="serif-title text-xl text-white" onclick="toggleMenu(false)">Metodología</a>
+    <a href="https://conformita.licicon.com" target="_blank" class="btn-luxe">Diagnóstico</a>
+</div>
+
+<section class="relative min-h-screen flex items-center px-6 md:px-24" style="background: linear-gradient(to bottom, rgba(5,7,10,0.85), rgba(5,7,10,1)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070') center/cover;">
+    <div class="max-w-6xl pt-20" data-aos="fade-up">
+        <div class="w-24 h-1 mb-10 bg-gold" style="background:var(--accent-gold)"></div>
+        <h2 class="text-gold text-[10px] md:text-xs tracking-[.6em] uppercase font-bold mb-6 opacity-80" style="color:var(--accent-gold)">Smart Asset Management & Compliance</h2>
+        <h1 class="serif-title text-3xl md:text-[80px] leading-tight md:leading-[0.95] mb-10">
+            Arquitectura de <span class="gold-gradient-text">Cumplimiento</span><br>
+            <span class="text-slate-200">Institucional.</span>
+        </h1>
+        <p class="max-w-4xl text-slate-400 text-base md:text-xl font-light leading-relaxed border-l-2 border-gold/30 pl-8 italic">
+            LICICON es una firma especializada en gestión estratégica de activos, cumplimiento normativo y optimización institucional, enfocada en proteger el valor patrimonial de empresas, inversiones y operaciones comerciales.
+        </p>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="que-hacemos" class="px-6 md:px-24 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div data-aos="fade-right">
+            <h2 class="serif-title text-3xl md:text-4xl mb-10 uppercase tracking-widest">Qué <span class="gold-gradient-text">Hacemos</span></h2>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-10 font-light">
+                Diseñamos e implementamos modelos institucionales de gestión orientados a proteger el valor de los activos empresariales y optimizar su operación. Trabajamos con organizaciones que requieren orden, control y cumplimiento bajo estándares internacionales.
+            </p>
+            <div class="blue-gold-card p-8 md:p-12 text-center">
+                <p class="serif-title text-xl md:text-2xl italic opacity-80">"LICICON no solo gestiona activos: estructura sistemas institucionales que garantizan su permanencia."</p>
+            </div>
+        </div>
+        <div data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" class="asset-photo rounded shadow-2xl">
+        </div>
+    </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="sectores" class="px-6 md:px-24 py-20 md:py-32 bg-slate-950/20">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="serif-title text-3xl md:text-4xl mb-4 uppercase tracking-widest">Diversificación de <span class="gold-gradient-text">Activos</span></h2>
+            <p class="text-slate-600 tracking-[.5em] uppercase text-[10px] font-bold">Gobernanza Multidominio</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="blue-gold-card p-12 text-center" data-aos="fade-up" onclick="openSector('corp')">
+                <i class="fas fa-plus plus-icon"></i>
+                <i class="fas fa-building-columns text-5xl mb-8"></i>
+                <p class="text-[11px] tracking-[.3em] uppercase font-bold text-slate-400">Corporativo</p>
+                <div class="card-indicator">Explorar Aplicaciones <i class="fas fa-arrow-right ml-1"></i></div>
+            </div>
+            <div class="blue-gold-card p-12 text-center" data-aos="fade-up" data-aos-delay="100" onclick="openSector('real')">
+                <i class="fas fa-plus plus-icon"></i>
+                <i class="fas fa-city text-5xl mb-8"></i>
+                <p class="text-[11px] tracking-[.3em] uppercase font-bold text-slate-400">Real Estate</p>
+                <div class="card-indicator">Explorar Aplicaciones <i class="fas fa-arrow-right ml-1"></i></div>
+            </div>
+            <div class="blue-gold-card p-12 text-center" data-aos="fade-up" data-aos-delay="150" onclick="openSector('smart')">
+                <i class="fas fa-plus plus-icon"></i>
+                <i class="fas fa-network-wired text-5xl mb-8"></i>
+                <p class="text-[11px] tracking-[.3em] uppercase font-bold text-slate-400">Smart Operations</p>
+                <div class="card-indicator">Explorar Aplicaciones <i class="fas fa-arrow-right ml-1"></i></div>
+            </div>
+            <div class="blue-gold-card p-12 text-center" data-aos="fade-up" data-aos-delay="200" onclick="openSector('tech')">
+                <i class="fas fa-plus plus-icon"></i>
+                <i class="fas fa-microchip text-5xl mb-8"></i>
+                <p class="text-[11px] tracking-[.3em] uppercase font-bold text-slate-400">Tech Assets</p>
+                <div class="card-indicator">Explorar Aplicaciones <i class="fas fa-arrow-right ml-1"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="especializacion" class="px-6 md:px-24 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="serif-title text-3xl md:text-5xl mb-6 uppercase tracking-widest">Líneas <span class="gold-gradient-text">Estratégicas</span></h2>
+        <p class="text-slate-600 tracking-[.5em] uppercase text-[11px] font-bold mb-20">Áreas de Especialización</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="blue-gold-card p-10 md:p-14 text-left" data-aos="fade-up">
+                <h3 class="serif-title text-2xl mb-8 text-white border-b border-gold/20 pb-6 uppercase">Asset Management</h3>
+                <ul class="text-[11px] space-y-4 text-slate-500 font-bold uppercase tracking-widest">
+                    <li>· Administración Inmobiliaria</li>
+                    <li>· Modelos de Arrendamiento</li>
+                    <li>· Supervisión Contractual</li>
+                    <li>· Optimización Financiera</li>
+                </ul>
+            </div>
+            <div class="blue-gold-card p-10 md:p-14 text-left" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="serif-title text-2xl mb-8 text-white border-b border-gold/20 pb-6 uppercase">Compliance</h3>
+                <div class="mb-6"><p class="text-[9px] text-gold/60 tracking-widest mb-4">ISO 27001 | 31000 | 9001 | 37301</p></div>
+                <ul class="text-[11px] space-y-4 text-slate-500 font-bold uppercase tracking-widest">
+                    <li>· Diagnóstico Normativo</li>
+                    <li>· Implementación de Sistemas</li>
+                    <li>· Gestión de Riesgos</li>
+                    <li>· Protección Jurídica</li>
+                </ul>
+            </div>
+            <div class="blue-gold-card p-10 md:p-14 text-left" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="serif-title text-2xl mb-8 text-white border-b border-gold/20 pb-6 uppercase">Optimización</h3>
+                <ul class="text-[11px] space-y-4 text-slate-500 font-bold uppercase tracking-widest">
+                    <li>· Digitalización Administrativa</li>
+                    <li>· Automatización Documental</li>
+                    <li>· Control de Operaciones</li>
+                    <li>· Mejora Estructural</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="metodologia" class="px-6 md:px-24 py-20 md:py-32">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 md:mb-24">
+            <h2 class="serif-title text-3xl md:text-4xl mb-4 uppercase tracking-widest">Metodología de <span class="gold-gradient-text">Trabajo</span></h2>
+            <p class="text-slate-600 tracking-[.5em] uppercase text-[10px] font-bold">Rigor en cada etapa</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
+            <div class="space-y-12 md:space-y-16">
+                <div class="step-item flex gap-8 border-l-2 border-gold/20 pl-8 md:pl-10 relative" data-aos="fade-left">
+                    <div class="step-node absolute -left-[11px] w-5 h-5 rounded-full bg-slate-950 border-2 border-gold" style="border-color:var(--accent-gold)"></div>
+                    <div>
+                        <h4 class="serif-title text-xl text-gold mb-3 uppercase tracking-wider" style="color:var(--accent-gold)">01. Diagnóstico</h4>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Análisis de estructura documental, cumplimiento normativo y riesgos operativos bajo estándares ISO.</p>
+                    </div>
+                </div>
+                <div class="step-item flex gap-8 border-l-2 border-gold/20 pl-8 md:pl-10 relative" data-aos="fade-left" data-aos-delay="200">
+                    <div class="step-node absolute -left-[11px] w-5 h-5 rounded-full bg-slate-950 border-2 border-gold" style="border-color:var(--accent-gold)"></div>
+                    <div>
+                        <h4 class="serif-title text-xl text-gold mb-3 uppercase tracking-wider" style="color:var(--accent-gold)">02. Arquitectura de Cumplimiento</h4>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Diseño de la estructura jurídica, blindaje de activos y protocolos de control institucional.</p>
+                    </div>
+                </div>
+                <div class="step-item flex gap-8 border-l-2 border-gold/20 pl-8 md:pl-10 relative" data-aos="fade-left" data-aos-delay="400">
+                    <div class="step-node absolute -left-[11px] w-5 h-5 rounded-full bg-slate-950 border-2 border-gold" style="border-color:var(--accent-gold)"></div>
+                    <div>
+                        <h4 class="serif-title text-xl text-gold mb-3 uppercase tracking-wider" style="color:var(--accent-gold)">03. Implementación</h4>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Establecimiento de flujos documentales operativos y despliegue de sistemas de gestión.</p>
+                    </div>
+                </div>
+                <div class="step-item flex gap-8 border-l-2 border-gold/20 pl-8 md:pl-10 relative" data-aos="fade-left" data-aos-delay="600">
+                    <div class="step-node absolute -left-[11px] w-5 h-5 rounded-full bg-slate-950 border-2 border-gold" style="border-color:var(--accent-gold)"></div>
+                    <div>
+                        <h4 class="serif-title text-xl text-gold mb-3 uppercase tracking-wider" style="color:var(--accent-gold)">04. Monitoreo y Continuidad</h4>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Auditoría de cumplimiento, mejora continua y supervisión de la vigencia institucional de los activos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block sticky top-32" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070" class="asset-photo rounded shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+<!-- ===== PLATAFORMAS ===== -->
+<section id="plataformas" class="py-20 md:py-32 px-6 md:px-24 bg-slate-950/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <p class="text-[10px] uppercase tracking-[0.4em] text-gold/60 mb-4 font-bold">Ecosistema Tecnológico</p>
+            <h2 class="serif-title text-3xl md:text-5xl uppercase tracking-widest mb-6">Nuestras Plataformas</h2>
+            <div class="gold-divider max-w-xs mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Catturare -->
+            <div class="blue-gold-card p-8 rounded-sm" data-aos="fade-up" data-aos-delay="100">
+                <div class="plus-icon"><i class="fas fa-plus"></i></div>
+                <div class="text-[9px] uppercase tracking-[0.4em] text-gold/50 font-bold mb-3">Real Estate</div>
+                <h3 class="serif-title text-2xl text-gold mb-2 tracking-widest">Catturare</h3>
+                <div class="h-[1px] w-8 bg-gold/30 mb-4"></div>
+                <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                    Plataforma inteligente de gestión inmobiliaria. Capta propiedades, genera leads, publica con IA y cierra más rápido.
+                </p>
+                <div class="space-y-2 text-[10px] text-slate-500 uppercase tracking-wider mb-8">
+                    <div>· Generación de descripciones con IA</div>
+                    <div>· Dashboard de leads en tiempo real</div>
+                    <div>· Landing pública por propiedad</div>
+                    <div>· Integración directa con WhatsApp</div>
+                </div>
+                <a href="https://catturare.licicon.com" target="_blank" class="btn-luxe text-[8px]">Acceder →</a>
+                <div class="card-indicator">Capturar · Gestionar · Cerrar</div>
+            </div>
+
+            <!-- Certezza -->
+            <div class="blue-gold-card p-8 rounded-sm" data-aos="fade-up" data-aos-delay="200">
+                <div class="plus-icon"><i class="fas fa-plus"></i></div>
+                <div class="text-[9px] uppercase tracking-[0.4em] text-gold/50 font-bold mb-3">Construcción</div>
+                <h3 class="serif-title text-2xl text-gold mb-2 tracking-widest">Certezza</h3>
+                <div class="h-[1px] w-8 bg-gold/30 mb-4"></div>
+                <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                    Control institucional de obra. Catálogo desde Excel, avance diario, semáforos financieros, bitácora legal y PDF de estimación.
+                </p>
+                <div class="space-y-2 text-[10px] text-slate-500 uppercase tracking-wider mb-8">
+                    <div>· Importación de catálogo desde Excel</div>
+                    <div>· Alertas de fuga financiera</div>
+                    <div>· Bitácora legal con evidencia fotográfica</div>
+                    <div>· PDF de estimación automático</div>
+                </div>
+                <a href="https://certezza.licicon.com" target="_blank" class="btn-luxe text-[8px]">Acceder →</a>
+                <div class="card-indicator">Precisión · Control · Trazabilidad</div>
+            </div>
+
+            <!-- Conformità -->
+            <div class="blue-gold-card p-8 rounded-sm" data-aos="fade-up" data-aos-delay="300">
+                <div class="plus-icon"><i class="fas fa-plus"></i></div>
+                <div class="text-[9px] uppercase tracking-[0.4em] text-gold/50 font-bold mb-3">Compliance</div>
+                <h3 class="serif-title text-2xl text-gold mb-2 tracking-widest">Conformità</h3>
+                <div class="h-[1px] w-8 bg-gold/30 mb-4"></div>
+                <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                    Diagnóstico normativo inteligente. 10 preguntas que identifican todas las obligaciones legales aplicables a tu empresa en México.
+                </p>
+                <div class="space-y-2 text-[10px] text-slate-500 uppercase tracking-wider mb-8">
+                    <div>· Módulo Amministrativo — base universal</div>
+                    <div>· Módulo Specifico — por giro</div>
+                    <div>· Módulo Misura — a la medida</div>
+                    <div>· Marco normativo completo México</div>
+                </div>
+                <a href="https://conformita.licicon.com" target="_blank" class="btn-luxe text-[8px]">Diagnóstico Gratuito →</a>
+                <div class="card-indicator">Cumplimiento · Protección · Certeza</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="filosofia" class="bg-slate-950/20 py-20 md:py-32 px-6 md:px-24">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div data-aos="fade-right">
+            <h3 class="serif-title text-3xl md:text-4xl mb-10 uppercase tracking-widest">Filosofía</h3>
+            <p class="text-slate-400 text-xl md:text-2xl font-light leading-relaxed italic border-l-2 border-gold/30 pl-10 mb-10">
+                "La protección de un activo no depende únicamente de su propiedad jurídica, sino de la estructura institucional que lo respalda. Construimos estructuras sólidas que aseguran su permanencia."
+            </p>
+            <p class="text-slate-500 uppercase tracking-[0.3em] text-[10px] font-bold">LICICON Private Architecture</p>
+        </div>
+        <div data-aos="fade-left" class="book-container">
+            <div class="book-wrapper">
+                <div class="book-spine"></div>
+                <div class="book-cover">
+                    <img src="logo.png" class="w-48 mb-8 opacity-90">
+                    <div class="h-[1px] w-12 bg-gold mb-8"></div>
+                    <p class="serif-title text-gold text-center text-xs tracking-[0.4em] uppercase leading-loose">Architecture of<br>Institutional<br>Compliance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="py-20 md:py-32 px-6 md:px-24 bg-slate-950/40">
+    <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <p class="text-[10px] uppercase tracking-[0.4em] text-gold/60 mb-4 font-bold">Hablemos</p>
+            <h2 class="serif-title text-3xl md:text-5xl uppercase tracking-widest mb-6">Contacto</h2>
+            <div class="gold-divider max-w-xs mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+            <!-- Info -->
+            <div data-aos="fade-right">
+                <p class="text-slate-400 text-base font-light leading-relaxed mb-10">
+                    ¿Tu empresa necesita orden institucional? ¿Quieres saber qué leyes aplican a tu operación? ¿Tienes una obra o activo inmobiliario que requiere control profesional?
+                </p>
+                <p class="text-slate-400 text-base font-light leading-relaxed mb-12 italic border-l-2 border-gold/30 pl-6">
+                    "Respondemos en menos de 24 horas. Sin compromiso."
+                </p>
+
+                <!-- WhatsApp directo -->
+                <a href="https://wa.me/5215521379039?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20LICICON." target="_blank"
+                   class="inline-flex items-center gap-4 bg-[#25D366]/10 border border-[#25D366]/30 px-8 py-4 hover:bg-[#25D366]/20 transition mb-6 w-full justify-center md:justify-start">
+                    <i class="fab fa-whatsapp text-[#25D366] text-2xl"></i>
+                    <div>
+                        <div class="text-[9px] uppercase tracking-[0.3em] text-[#25D366]/70 font-bold">WhatsApp Directo</div>
+                        <div class="text-white text-sm font-bold">+52 55 2137 9039</div>
+                    </div>
+                </a>
+
+                <a href="mailto:contactolicicon@gmail.com"
+                   class="inline-flex items-center gap-4 border border-gold/20 px-8 py-4 hover:border-gold/50 transition w-full justify-center md:justify-start">
+                    <i class="fas fa-envelope text-gold text-xl"></i>
+                    <div>
+                        <div class="text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold">Correo</div>
+                        <div class="text-white text-sm font-bold">contactolicicon@gmail.com</div>
+                    </div>
+                </a>
+
+                <div class="mt-10 text-[9px] uppercase tracking-[0.3em] text-slate-600 font-bold">
+                    Ciudad de México · Toluca · Estado de México
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div data-aos="fade-left">
+                <form action="https://formspree.io/f/mlgadkge" method="POST" id="contactForm">
+                    <div class="mb-6">
+                        <label class="block text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold mb-2">Nombre completo</label>
+                        <input type="text" name="nombre" required placeholder="Tu nombre"
+                               class="w-full bg-slate-900/50 border border-gold/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold/40 transition placeholder:text-slate-600">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold mb-2">Correo electrónico</label>
+                        <input type="email" name="email" required placeholder="tu@empresa.com"
+                               class="w-full bg-slate-900/50 border border-gold/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold/40 transition placeholder:text-slate-600">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold mb-2">Empresa</label>
+                        <input type="text" name="empresa" placeholder="Nombre de tu empresa"
+                               class="w-full bg-slate-900/50 border border-gold/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold/40 transition placeholder:text-slate-600">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold mb-2">¿En qué podemos ayudarte?</label>
+                        <select name="servicio" class="w-full bg-slate-900/50 border border-gold/10 text-slate-400 text-sm px-4 py-3 focus:outline-none focus:border-gold/40 transition">
+                            <option value="">Selecciona un servicio</option>
+                            <option value="conformita">Diagnóstico normativo — Conformità</option>
+                            <option value="catturare">Gestión inmobiliaria — Catturare</option>
+                            <option value="certezza">Control de obra — Certezza</option>
+                            <option value="compliance">Compliance ISO</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="mb-8">
+                        <label class="block text-[9px] uppercase tracking-[0.3em] text-gold/60 font-bold mb-2">Mensaje</label>
+                        <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu situación..."
+                                  class="w-full bg-slate-900/50 border border-gold/10 text-white text-sm px-4 py-3 focus:outline-none focus:border-gold/40 transition placeholder:text-slate-600 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="btn-luxe w-full text-center py-4">
+                        ENVIAR MENSAJE →
+                    </button>
+                    <div id="form-success" class="hidden mt-4 text-center text-[10px] uppercase tracking-[0.3em] text-[#25D366] font-bold">
+                        ✓ Mensaje enviado — Te contactamos en menos de 24h
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black pt-20 md:pt-32 pb-16 px-6 md:px-20 border-t border-gold/10">
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 text-center md:text-left">
+        
+        <div class="flex flex-col items-center md:items-start">
+            <img src="logo.png" class="h-20 md:h-24 w-auto mb-8">
+        </div>
+
+        <div>
+            <h4 class="serif-title text-gold text-xs tracking-widest mb-10 uppercase">Navegación</h4>
+            <ul class="space-y-4 text-slate-500 text-[11px] font-bold uppercase tracking-widest">
+                <li><a href="#que-hacemos" class="hover:text-gold transition">Qué Hacemos</a></li>
+                <li><a href="#sectores" class="hover:text-gold transition">Sectores</a></li>
+                <li><a href="#metodologia" class="hover:text-gold transition">Metodología</a></li>
+                <li><a href="#plataformas" class="hover:text-gold transition">Plataformas</a></li>
+                <li><a href="https://catturare.licicon.com" target="_blank" class="hover:text-gold transition">Catturare</a></li>
+                <li><a href="https://conformita.licicon.com" target="_blank" class="hover:text-gold transition">Conformità</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="serif-title text-gold text-xs tracking-widest mb-10 uppercase">Estándares</h4>
+            <ul class="space-y-4 text-slate-500 text-[11px] font-bold uppercase tracking-widest">
+                <li>ISO 27001 Seguridad</li>
+                <li>ISO 37301 Compliance</li>
+                <li>ISO 31000 Gestión de Riesgos</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="serif-title text-gold text-xs tracking-widest mb-10 uppercase">Contacto</h4>
+
+            <a href="https://conformita.licicon.com" target="_blank" class="text-white text-[12px] font-bold hover:text-gold transition block mb-8">
+                CONTACTO@LICICON.COM
+            </a>
+
+            <div class="flex justify-center md:justify-start space-x-8 text-gold text-xl">
+                <a href="https://www.linkedin.com/company/licicon-consultoria-especializada" target="_blank"><i class="fab fa-linkedin-in hover:scale-110 transition text-gold"></i></a>
+                <a href="https://wa.me/5215521379039?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20LICICON." target="_blank"><i class="fab fa-whatsapp hover:scale-110 transition text-gold"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="mt-20 text-center text-[8px] text-slate-800 tracking-[0.8em] uppercase">
+        © LICICON PRIVATE ARCHITECTURE 2026 &nbsp;·&nbsp; <button onclick="document.getElementById('privacyModal').style.display='block';document.body.style.overflow='hidden'" style="background:none;border:none;color:rgba(212,175,55,0.4);cursor:pointer;font-family:Montserrat,sans-serif;font-size:8px;letter-spacing:0.8em;text-transform:uppercase;text-decoration:underline">Aviso de Privacidad</button>
     </p>
-  </div>
 
-  <div class="container" id="servicios">
-    <h2>Servicios que ofrecemos</h2>
-    <div class="services-grid">
-      <div>
-        <h3>Legales</h3>
-        <ul>
-          <li>Asesoría jurídica especializada</li>
-          <li>Licitaciones públicas</li>
-          <li>Representación legal</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Tecnología / IT</h3>
-        <ul>
-          <li>Soluciones en ciberseguridad</li>
-          <li>Automatización de procesos</li>
-          <li>Soporte técnico empresarial</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Ingeniería y Supervisión</h3>
-        <ul>
-          <li>Supervisión de obra pública y privada</li>
-          <li>Ingeniería estructural y civil</li>
-          <li>Gestión de proyectos</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contabilidad, Administración y Cumplimiento STPS</h3>
-        <ul>
-          <li>Contabilidad general</li>
-          <li>Gestión administrativa y documental</li>
-          <li>Elaboración de expedientes laborales</li>
-          <li>Políticas alineadas a la STPS</li>
-          <li>Auditorías internas</li>
-          <li>Obligaciones patronales</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Auditorías y Sistemas de Gestión ISO</h3>
-        <ul>
-          <li>Auditorías internas ISO 9001, 14001, 45001, 27001 y 31000</li>
-          <li>Implementación de SGI</li>
-          <li>Capacitación y consultoría</li>
-          <li>Soporte a certificación</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Diseño Gráfico y Web</h3>
-        <ul>
-          <li>Identidad corporativa</li>
-          <li>Desarrollo web</li>
-          <li>Material promocional</li>
-        </ul>
-      </div>
+</footer>
+
+
+
+
+<!-- AVISO DE PRIVACIDAD MODAL -->
+<div id="privacyModal" style="display:none;position:fixed;inset:0;background:rgba(5,7,10,0.98);backdrop-filter:blur(15px);z-index:200;overflow-y:auto;">
+  <div style="max-width:760px;margin:40px auto;padding:40px 24px;border:1px solid rgba(212,175,55,0.2);background:#05070a;position:relative;">
+    <button onclick="document.getElementById('privacyModal').style.display='none';document.body.style.overflow='auto'"
+      style="position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(212,175,55,0.6);font-size:20px;cursor:pointer;font-family:Montserrat,sans-serif">[X]</button>
+
+    <p style="font-family:Montserrat,sans-serif;font-size:8px;letter-spacing:3px;color:rgba(212,175,55,0.6);margin-bottom:12px">LICICON · CUMPLIMIENTO NORMATIVO</p>
+    <h2 style="font-family:Cinzel,serif;font-size:28px;color:#D4AF37;margin-bottom:4px;letter-spacing:3px">AVISO DE PRIVACIDAD</h2>
+    <p style="font-family:Montserrat,sans-serif;font-size:10px;color:rgba(232,228,218,0.4);letter-spacing:2px;margin-bottom:32px">En cumplimiento a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares</p>
+
+    <div style="height:1px;background:linear-gradient(to right,transparent,rgba(212,175,55,0.3),transparent);margin-bottom:28px"></div>
+
+    <div style="font-family:Montserrat,sans-serif;font-size:12px;color:rgba(232,228,218,0.7);line-height:2;space-y:16px">
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">I. IDENTIDAD Y DOMICILIO DEL RESPONSABLE</strong><br>
+      LICICON, nombre comercial operado por <strong style="color:#e8e4da">Roberto Amaral Ponce</strong>, persona física con actividad empresarial, con domicilio en Ciudad de México y Toluca, Estado de México, y correo electrónico de contacto: <strong style="color:#e8e4da">contactolicicon@gmail.com</strong></p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">II. DATOS PERSONALES QUE SE RECABAN</strong><br>
+      LICICON podrá recabar los siguientes datos personales: nombre completo, correo electrónico, nombre de empresa, número telefónico y cualquier información que el titular proporcione voluntariamente a través de los formularios de contacto y diagnóstico normativo disponibles en licicon.com, catturare.licicon.com y conformita.licicon.com.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">III. FINALIDADES DEL TRATAMIENTO</strong><br>
+      Los datos personales recabados serán utilizados para las siguientes finalidades primarias: (a) atender solicitudes de información y contacto; (b) proveer los servicios de diagnóstico normativo, gestión de activos y control de obra; (c) enviar comunicaciones relacionadas con los servicios solicitados. Finalidades secundarias: envío de información comercial sobre servicios de LICICON, previa obtención de consentimiento expreso.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">IV. TRANSFERENCIA DE DATOS</strong><br>
+      LICICON no transferirá sus datos personales a terceros sin su consentimiento, salvo las excepciones previstas en el artículo 37 de la LFPDPPP, incluyendo aquellas transferencias necesarias para el funcionamiento de herramientas tecnológicas como Formspree Inc. para el procesamiento de formularios de contacto, bajo sus propias políticas de privacidad.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">V. DERECHOS ARCO</strong><br>
+      Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales (Derechos ARCO). Para ejercerlos, envíe su solicitud al correo <strong style="color:#e8e4da">contactolicicon@gmail.com</strong> indicando: nombre completo, datos de contacto, descripción clara del derecho a ejercer y documentos que acrediten su identidad. LICICON responderá en un plazo máximo de 20 días hábiles.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">VI. USO DE COOKIES Y TECNOLOGÍAS DE RASTREO</strong><br>
+      Este sitio web utiliza cookies y tecnologías similares para mejorar la experiencia de navegación. Se utilizan fuentes tipográficas de Google Fonts y librerías de animación (AOS) que pueden recopilar datos de navegación de forma anónima. Usted puede configurar su navegador para rechazar cookies; sin embargo, esto podría afectar la funcionalidad del sitio.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">VII. CAMBIOS AL AVISO DE PRIVACIDAD</strong><br>
+      LICICON se reserva el derecho de modificar el presente aviso de privacidad. Cualquier cambio será notificado a través de licicon.com. Se recomienda revisar periódicamente esta página.</p>
+
+      <p style="margin-bottom:20px"><strong style="color:#D4AF37;letter-spacing:1px">VIII. AUTORIDAD</strong><br>
+      Si considera que su derecho a la protección de datos personales ha sido vulnerado, puede acudir al Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) en www.inai.org.mx.</p>
+
     </div>
-    <div class="iso">
-      <p>
-        En LICICON trabajamos conforme a estándares internacionales de calidad, seguridad, medio ambiente y gestión del riesgo, basados en las normas ISO 9001, ISO 14001, ISO 45001, ISO 27001 e ISO 31000.
-      </p>
+
+    <div style="height:1px;background:linear-gradient(to right,transparent,rgba(212,175,55,0.3),transparent);margin:28px 0"></div>
+    <p style="font-family:Montserrat,sans-serif;font-size:9px;color:rgba(232,228,218,0.3);letter-spacing:2px;text-align:center">Última actualización: Abril 2026 · LICICON · contactolicicon@gmail.com</p>
+  </div>
+</div>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" style="position:fixed;bottom:0;left:0;right:0;background:rgba(5,7,10,0.97);border-top:1px solid rgba(212,175,55,0.2);padding:16px 24px;z-index:150;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+  <p style="font-family:Montserrat,sans-serif;font-size:10px;color:rgba(232,228,218,0.6);letter-spacing:1px;flex:1;min-width:200px">
+    Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando acepta su uso.
+    <button onclick="document.getElementById('privacyModal').style.display='block';document.body.style.overflow='hidden'"
+      style="background:none;border:none;color:#D4AF37;cursor:pointer;font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:1px;text-decoration:underline;padding:0">Ver aviso de privacidad</button>
+  </p>
+  <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookiesAccepted','true')"
+    style="background:#D4AF37;color:#05070a;border:none;padding:8px 20px;font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:2px;font-weight:700;cursor:pointer;white-space:nowrap">
+    ACEPTAR
+  </button>
+</div>
+
+<script>
+if(localStorage.getItem('cookiesAccepted')) document.getElementById('cookieBanner').style.display='none';
+</script>
+
+<div id="sectorModal" class="modal">
+    <div class="modal-content text-center">
+        <span class="close-modal absolute top-4 right-4 text-gold cursor-pointer" onclick="closeSector()">[X]</span>
+        <i id="m-icon" class="fas text-4xl mb-6 text-gold"></i>
+        <h3 id="m-title" class="serif-title text-2xl mb-6 uppercase gold-gradient-text"></h3>
+        <p id="m-desc" class="text-slate-400 text-sm font-light leading-relaxed mb-8"></p>
+        <ul id="m-list" class="text-left text-[11px] text-slate-500 space-y-2 uppercase tracking-wider bg-slate-900/50 p-6 border border-gold/5"></ul>
     </div>
-  </div>
+</div>
 
-  <div class="container contact" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Escríbenos. Toda gran solución empieza con una conversación.</p>
-    <a href="mailto:contactolicicon@gmail.com">Enviar correo</a>
-    <a href="https://wa.me/5210000000000" target="_blank">WhatsApp</a>
-    <form>
-      <input type="text" placeholder="Nombre" required><br>
-      <input type="email" placeholder="Correo" required><br>
-      <textarea placeholder="Mensaje" required></textarea><br>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.style.visibility = 'hidden'; AOS.init({duration:1200, once:true}); }, 1000);
+        }, 2500);
+    });
 
-  <footer>
-    <p>&copy; 2025 LICICON Integral Consulting Group</p>
-    <p>Powered by estrategia, visión y silencio ejecutivo.</p>
-  </footer>
+    function toggleMenu(open) {
+        document.getElementById('mobile-menu').classList.toggle('open', open);
+    }
+
+    const sectorData = {
+        'corp': { title: 'Corporativo', icon: 'fa-building-columns', desc: 'Gobernanza y cumplimiento normativo corporativo.', apps: ['Gobernanza', 'Control', 'Riesgos'] },
+        'real': { title: 'Real Estate', icon: 'fa-city', desc: 'Gestión estratégica de activos inmobiliarios.', apps: ['Administración', 'Contratos', 'Optimización'] },
+        'smart': { title: 'Smart Operations', icon: 'fa-network-wired', desc: 'Sistemas inteligentes de operación.', apps: ['Digitalización', 'Flujos', 'Automatización'] },
+        'tech': { title: 'Tech Assets', icon: 'fa-microchip', desc: 'Gestión y protección de activos tecnológicos.', apps: ['Seguridad', 'ISO', 'Gobernanza Tech'] }
+    };
+
+    function openSector(key) {
+        const data = sectorData[key];
+        document.getElementById('m-title').innerText = data.title;
+        document.getElementById('m-desc').innerText = data.desc;
+        document.getElementById('m-icon').className = `fas ${data.icon} text-4xl mb-6 text-gold`;
+        document.getElementById('m-list').innerHTML = data.apps.map(a => `<li>• ${a}</li>`).join('');
+        document.getElementById('sectorModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Formspree AJAX
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        try {
+            const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            if (res.ok) {
+                form.reset();
+                document.getElementById('form-success').classList.remove('hidden');
+                setTimeout(() => document.getElementById('form-success').classList.add('hidden'), 5000);
+            }
+        } catch(err) { console.error(err); }
+    });
+
+    function closeSector() {
+        document.getElementById('sectorModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+</script>
 </body>
 </html>
